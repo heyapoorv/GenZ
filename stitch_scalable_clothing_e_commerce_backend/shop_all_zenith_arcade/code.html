@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Geist:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-container": "#666868",
+                  "secondary-fixed-dim": "#c8c6c5",
+                  "outline": "#8d90a2",
+                  "on-surface-variant": "#c3c5d9",
+                  "on-secondary-fixed-variant": "#474646",
+                  "on-background": "#e1e1ef",
+                  "on-surface": "#e1e1ef",
+                  "on-secondary": "#313030",
+                  "surface-container": "#1d1f29",
+                  "primary-container": "#0055ff",
+                  "error-container": "#93000a",
+                  "surface-container-lowest": "#0c0e17",
+                  "error": "#ffb4ab",
+                  "on-primary-container": "#e3e6ff",
+                  "surface-container-low": "#191b25",
+                  "secondary-container": "#4a4949",
+                  "tertiary-fixed": "#e2e2e2",
+                  "primary-fixed-dim": "#b6c4ff",
+                  "outline-variant": "#434656",
+                  "background": "#11131c",
+                  "on-error-container": "#ffdad6",
+                  "on-primary-fixed": "#001551",
+                  "on-primary": "#002780",
+                  "inverse-on-surface": "#2e303a",
+                  "on-error": "#690005",
+                  "surface-variant": "#32343f",
+                  "surface-bright": "#373943",
+                  "surface": "#11131c",
+                  "secondary": "#c8c6c5",
+                  "primary": "#b6c4ff",
+                  "inverse-primary": "#004dea",
+                  "on-tertiary": "#2f3131",
+                  "surface-container-high": "#282933",
+                  "on-primary-fixed-variant": "#0039b3",
+                  "surface-container-highest": "#32343f",
+                  "secondary-fixed": "#e5e2e1",
+                  "on-tertiary-fixed-variant": "#454747",
+                  "on-tertiary-fixed": "#1a1c1c",
+                  "inverse-surface": "#e1e1ef",
+                  "surface-tint": "#b6c4ff",
+                  "primary-fixed": "#dce1ff",
+                  "on-tertiary-container": "#e7e7e7",
+                  "tertiary-fixed-dim": "#c6c6c7",
+                  "surface-dim": "#11131c",
+                  "tertiary": "#c6c6c7",
+                  "on-secondary-container": "#bab8b7",
+                  "on-secondary-fixed": "#1c1b1b"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "section-gap": "120px",
+                  "margin-desktop": "64px",
+                  "unit": "8px",
+                  "container-max": "1440px",
+                  "margin-mobile": "20px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "display-xl": ["Anton"],
+                  "body-md": ["Hanken Grotesk"],
+                  "headline-lg-mobile": ["Anton"],
+                  "headline-lg": ["Anton"],
+                  "button-text": ["Geist"],
+                  "body-lg": ["Hanken Grotesk"],
+                  "headline-md": ["Anton"],
+                  "label-caps": ["Geist"]
+          },
+          "fontSize": {
+                  "display-xl": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                  "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                  "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                  "button-text": ["14px", {"lineHeight": "100%", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "120%", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tighter">ZENITH ARCADE</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-button-text text-button-text uppercase text-on-surface border-b-2 border-primary pb-1 transition-colors duration-300" href="#">SHOP</a>
+<a class="font-button-text text-button-text uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">COLLECTIONS</a>
+<a class="font-button-text text-button-text uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">LIMITED</a>
+<a class="font-button-text text-button-text uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">JOURNAL</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="scale-95 active:scale-90 transition-transform text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Page Header & Sort -->
+<header class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
+<div>
+<h1 class="font-headline-lg text-headline-lg mb-2">EQUIPMENT : JERSEYS</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">High-performance technical wear engineered for the ultimate athlete. Bridging the gap between cinematic anime aesthetics and professional gear.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Sort By</span>
+<div class="relative group">
+<button class="flex items-center gap-2 font-button-text text-button-text border border-outline-variant/30 px-4 py-2 hover:border-primary transition-colors">
+            NEWEST
+            <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex flex-col md:flex-row gap-12">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-28 space-y-10">
+<!-- Category -->
+<div class="space-y-4">
+<h3 class="font-label-caps text-label-caps uppercase border-b border-outline-variant/20 pb-2">Category</h3>
+<ul class="space-y-2">
+<li><button class="font-body-md text-body-md text-primary flex items-center justify-between w-full">All Jerseys <span class="text-[12px] opacity-60">24</span></button></li>
+<li><button class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between w-full">Compression <span class="text-[12px] opacity-60">12</span></button></li>
+<li><button class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between w-full">Street-Spec <span class="text-[12px] opacity-60">08</span></button></li>
+<li><button class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center justify-between w-full">Performance <span class="text-[12px] opacity-60">04</span></button></li>
+</ul>
+</div>
+<!-- Price Range -->
+<div class="space-y-4">
+<h3 class="font-label-caps text-label-caps uppercase border-b border-outline-variant/20 pb-2">Price Range</h3>
+<div class="pt-2">
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="250" min="0" type="range"/>
+<div class="flex justify-between mt-2 font-label-caps text-label-caps text-on-surface-variant">
+<span>$0</span>
+<span>$250</span>
+</div>
+</div>
+</div>
+<!-- Size -->
+<div class="space-y-4">
+<h3 class="font-label-caps text-label-caps uppercase border-b border-outline-variant/20 pb-2">Size</h3>
+<div class="grid grid-cols-4 gap-2">
+<button class="border border-outline-variant/30 py-2 font-button-text text-button-text hover:border-primary hover:text-primary transition-colors">S</button>
+<button class="border border-primary py-2 font-button-text text-button-text text-primary bg-primary/5">M</button>
+<button class="border border-outline-variant/30 py-2 font-button-text text-button-text hover:border-primary hover:text-primary transition-colors">L</button>
+<button class="border border-outline-variant/30 py-2 font-button-text text-button-text hover:border-primary hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+<!-- Color -->
+<div class="space-y-4">
+<h3 class="font-label-caps text-label-caps uppercase border-b border-outline-variant/20 pb-2">Color</h3>
+<div class="flex flex-wrap gap-3">
+<button class="w-6 h-6 rounded-full bg-surface-container-highest border border-primary ring-2 ring-primary ring-offset-2 ring-offset-background"></button>
+<button class="w-6 h-6 rounded-full bg-white"></button>
+<button class="w-6 h-6 rounded-full bg-[#E5122F]"></button>
+<button class="w-6 h-6 rounded-full bg-[#1C41F2]"></button>
+<button class="w-6 h-6 rounded-full bg-[#D1FF24]"></button>
+</div>
+</div>
+<button class="w-full py-4 border border-outline text-on-surface font-button-text text-button-text uppercase hover:bg-on-surface hover:text-surface transition-all">
+            Clear Filters
+          </button>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="flex-grow">
+<!-- Active Filter Chips -->
+<div class="flex flex-wrap gap-2 mb-8">
+<div class="flex items-center gap-2 bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant/20">
+<span class="font-label-caps text-label-caps">SIZE: M</span>
+<button class="flex items-center hover:text-primary transition-colors"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-3 py-1 rounded-full border border-outline-variant/20">
+<span class="font-label-caps text-label-caps">COMPRESSION</span>
+<button class="flex items-center hover:text-primary transition-colors"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-gutter">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A premium technical athletic jersey displayed against a dark, cinematic studio background with high-contrast electric blue lighting. The fabric shows intricate mesh textures and sharp, futuristic seam lines characteristic of high-end anime techwear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaiCLz7ELbOA8CaG5hRWAL64NEdwRsAuWVZHe6NRWsM39InxJA3tvgLqPdl6Tdlb5hRzoMFd6O4Jb5aeLOG3QJbDVnVhDXkkKBebn4Nj31VnU-RqJ51YXaeSJ7B4FnRq5djm16XrAuQDNgxMUfnm1kWPQ5uqDhUESmPpbZ9Z92Wpg3Ba7FBEm9cO8cd3oV06xu-iocYt3u8Drm0CMzzy-yYlnRakqERhL2N_Y8xqwtpASxgp_zyMXm5Z5MUN191zpT3a23pt7FVuaV"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<button class="w-full py-4 bg-primary text-on-primary font-button-text text-button-text uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 hover:bg-inverse-primary">
+                  Quick Add
+                </button>
+</div>
+<div class="absolute top-4 left-4 bg-background/90 backdrop-blur-md px-3 py-1">
+<span class="font-label-caps text-label-caps text-primary uppercase">Elite Spec</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-[18px] mb-1 group-hover:text-primary transition-colors">CYBER-CORE COMPRESSION</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Performance / Onyx Black</p>
+</div>
+<span class="font-button-text text-button-text">$120.00</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sleek white technical jersey with crimson red accents inspired by modern robotic designs. The studio lighting is sharp and industrial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd5qbBvtILuoXE4Gbhp-L4vzHvSeyhV1aMBb97v05mYloGakAac6OfUuK1dzodl0JVAtj3hS6vrgb2ZYGTGi--l3kDge5VtGn5ssTbYznU7I-kp4uE4m8JxfDT4lUAUJFkKpOY6T5RcmT-DN1ldOPFr7xvn_SWJxGMCReCrcGHygO7_FssEp3vtWaRpvkgzWwAkvBnLMh_-VKbb7PM5_RvLaUgoExPCMCPRAiD_yoEaF9xSrcv3k9I15h0NZolB3g2QoDyO5Xkpb_w"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<button class="w-full py-4 bg-primary text-on-primary font-button-text text-button-text uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 hover:bg-inverse-primary">
+                  Quick Add
+                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-[18px] mb-1 group-hover:text-primary transition-colors">VANGUARD PILOT JERSEY</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Street-Spec / Glacial White</p>
+</div>
+<span class="font-button-text text-button-text">$95.00</span>
+</div>
+</div>
+<!-- Product Card 3 (Featured) -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up shot of a high-performance athletic jersey in vibrant electric blue. The camera captures the technical weave and reflective silver brand logos." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbEgvq2CUBBYiZSpgr1Sa915j9i0hupPBb0eKlS7oyn-w-9IZBQfeNfIur_H9QzYtio3r4WVtHGfwPuFt46qSnQAZP3Jr912E-fNqR2tJ9OiexAYC_fleQR6g-ni814O9O0-8cPhMpkF5LRQopaMMDFwlxbiuxlLYABp3tR9ddErP1qkW7sbCZBlc-YZ3SAxE_LLr4tdbRTosf-8B-sOn8fdQQV1IrhhY3j5USuKzigTViMzj8cWlkWaoLVWdlNDKJz_IFTirdTask"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<button class="w-full py-4 bg-primary text-on-primary font-button-text text-button-text uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 hover:bg-inverse-primary">
+                  Quick Add
+                </button>
+</div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1">
+<span class="font-label-caps text-label-caps uppercase">Limited Release</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-[18px] mb-1 group-hover:text-primary transition-colors">NEON-DRIVE PERFORMANCE</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Performance / Electric Blue</p>
+</div>
+<span class="font-button-text text-button-text">$145.00</span>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Technical athletic wear with a deep red and charcoal color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBabMq-ce0U_kAsV8LryW07cnrVu7PfwX2aJWGwWwhBltbYCABMIouvq1Q_F_88zkBkFeCWZ1LLRLcPKssE6nEnAnFqltBVKhan1dqVUjfNVwhJy3pYlVu19OY-tb-PezeqILFM6xRLdEkO2Hm7MUik0OlFKNZ38tqCFIw9u40k3O4yAXg3pcxY6dAY4Vcl6CUnOxUaD76rKwTHL6d-4uLcPDVq7wzf2VgK_6vqTWspFn5fy5UWzyW2iPkI3zshyPSMCVQGc2Y7xq0d"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<button class="w-full py-4 bg-primary text-on-primary font-button-text text-button-text uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 hover:bg-inverse-primary">
+                  Quick Add
+                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-[18px] mb-1 group-hover:text-primary transition-colors">BLOOD-STREAK BASE LAYER</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Compression / Crimson</p>
+</div>
+<span class="font-button-text text-button-text">$85.00</span>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A dark, tactical-style jersey with matte black finishes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRo55JcahF88MkDTL41b7malqE-m5uNmbUlRDt06iiv1KxzPYEP2PIVU4KtJAw1dTTGaXpQQVqMyEZVCBO2aCV-l0zFte5c6tZWKzT01n1RvHe4qHWibSyYLP60gLy9RA-PHiXJ3GUgchh5vNt5JzwfaVxHVZzxwc6-3PBu3PoGrjImvLwZR-_vFGdAvnF_P_kVxxTW8akghzVJZx2uTqHE2jDRI_EHT_LmtRAqujk4lIU7CSGa_cNM_6A0mqjhdrxst-BXPz7Yk5T"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<button class="w-full py-4 bg-primary text-on-primary font-button-text text-button-text uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 hover:bg-inverse-primary">
+                  Quick Add
+                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-[18px] mb-1 group-hover:text-primary transition-colors">PHANTOM-TECH JERSEY</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Street-Spec / Stealth Black</p>
+</div>
+<span class="font-button-text text-button-text">$110.00</span>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden mb-4">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional-grade performance jersey in a bold safety yellow and dark navy blue combination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE1ecVcvR0OM8NRsADisuc_USTkeQ4wSrlgwJVTMY5934B2M7glUTnr5jkRCNZjqyR6Ll-TdIJLJL3dKLgt5myMbDlcnJJhUXdJlOM4Y2rUtw-hN1H_TAo06U948Ugcdo_F7p4dkcdfepFm_17bnq9RRLJgQyI2clwnXUYaIJQ74PxIkXr73zI_tFtWdVxwNkblXjecnjxb_QYTDbKm-96wyD4MsTv7qZFqzY9AEo4Fur8jXJO59uV-M_xeauoHpwc1Ldm7-EQAZNb"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<button class="w-full py-4 bg-primary text-on-primary font-button-text text-button-text uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 hover:bg-inverse-primary">
+                  Quick Add
+                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-[18px] mb-1 group-hover:text-primary transition-colors">APEX OVER-DRIVE</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Performance / Safety Yellow</p>
+</div>
+<span class="font-button-text text-button-text">$130.00</span>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center gap-4">
+<button class="w-12 h-12 flex items-center justify-center border border-primary text-primary bg-primary/10 font-button-text hover:bg-primary hover:text-on-primary transition-all">1</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all font-button-text">2</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary transition-all font-button-text">3</button>
+<button class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-section-gap border-t border-outline-variant/10 bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto gap-12">
+<div class="space-y-6">
+<div class="font-headline-lg text-headline-lg text-primary">ZENITH ARCADE</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Engineered for ascension. Bridging the physical and cinematic athletic experience.</p>
+<div class="flex gap-4">
+<a class="opacity-80 hover:opacity-100 hover:text-primary transition-all text-on-surface" href="#"><span class="material-symbols-outlined">brand_awareness</span></a>
+<a class="opacity-80 hover:opacity-100 hover:text-primary transition-all text-on-surface" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="opacity-80 hover:opacity-100 hover:text-primary transition-all text-on-surface" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-8">
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-primary uppercase">Information</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" href="#">PRIVACY POLICY</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" href="#">TERMS OF SERVICE</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-primary uppercase">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" href="#">SHIPPING &amp; RETURNS</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" href="#">CONTACT</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="space-y-4 col-span-2 md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-primary uppercase">Newsletter</h4>
+<div class="flex gap-2">
+<input class="bg-surface-container-high border-none text-on-surface px-4 py-2 font-body-md w-full focus:ring-1 focus:ring-primary" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-primary text-on-primary px-4 font-button-text transition-all active:scale-95 hover:bg-inverse-primary">JOIN</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto pt-8 border-t border-outline-variant/5">
+<p class="font-body-md text-body-md text-on-surface-variant text-[12px]">© 2024 ZENITH ARCADE. ENGINEERED FOR ASCENSION.</p>
+</div>
+</footer>
+</body></html>

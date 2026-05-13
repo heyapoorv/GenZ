@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Geist:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#313030",
+                        "on-primary-fixed-variant": "#0039b3",
+                        "outline": "#8d90a2",
+                        "inverse-surface": "#e1e1ef",
+                        "primary-container": "#0055ff",
+                        "primary": "#b6c4ff",
+                        "on-background": "#e1e1ef",
+                        "surface-dim": "#11131c",
+                        "surface-container-lowest": "#0c0e17",
+                        "surface-container-highest": "#32343f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#bab8b7",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#2e303a",
+                        "surface-container-low": "#191b25",
+                        "outline-variant": "#434656",
+                        "on-surface": "#e1e1ef",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "inverse-primary": "#004dea",
+                        "surface-tint": "#b6c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "tertiary": "#c6c6c7",
+                        "on-primary": "#002780",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#474646",
+                        "background": "#11131c",
+                        "tertiary-container": "#666868",
+                        "surface-container-high": "#282933",
+                        "on-primary-container": "#e3e6ff",
+                        "on-tertiary-container": "#e7e7e7",
+                        "secondary": "#c8c6c5",
+                        "surface-bright": "#373943",
+                        "on-tertiary": "#2f3131",
+                        "on-primary-fixed": "#001551",
+                        "surface-container": "#1d1f29",
+                        "on-surface-variant": "#c3c5d9",
+                        "surface-variant": "#32343f",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "secondary-container": "#4a4949",
+                        "surface": "#11131c",
+                        "secondary-fixed": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Geist"],
+                        "headline-lg-mobile": ["Anton"],
+                        "display-xl": ["Anton"],
+                        "button-text": ["Geist"],
+                        "headline-md": ["Anton"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                        "display-xl": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "button-text": ["14px", {"lineHeight": "100%", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "120%", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #11131c;
+            color: #e1e1ef;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(17, 19, 28, 0.8);
+        }
+    </style>
+</head>
+<body class="font-body-md bg-background text-on-background">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-outline-variant/10 flex flex-col bg-surface-dim z-50">
+<div class="p-gutter">
+<h1 class="font-display-xl text-headline-md tracking-tighter text-primary">ZENITH ARCADE</h1>
+<p class="font-body-md text-on-surface-variant opacity-70 mt-1">Elite Performance</p>
+</div>
+<nav class="flex-1 mt-8">
+<a class="flex items-center gap-3 px-6 py-4 text-primary font-bold bg-primary-container/10 border-r-2 border-primary transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-md">My Orders</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-body-md">My Wishlist</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-body-md">Account Info</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md">Preferences</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-4 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-body-md">Help &amp; Support</span>
+</a>
+</nav>
+<div class="p-gutter mt-auto">
+<button class="w-full bg-primary text-on-primary font-button-text py-4 rounded-none hover:bg-white hover:text-black transition-colors uppercase tracking-widest">
+            Enter the Shop
+        </button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 z-40 flex justify-between items-center px-gutter h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+<div class="flex items-center gap-unit">
+<span class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">ZENITH ARCADE</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-6 font-label-caps text-label-caps uppercase text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">New Arrivals</a>
+<a class="hover:text-primary transition-colors" href="#">Equipment</a>
+<a class="hover:text-primary transition-colors" href="#">Apparel</a>
+<a class="hover:text-primary transition-colors" href="#">Archive</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary" data-icon="search">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary" data-icon="notifications">notifications</span>
+<div class="relative cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</div>
+<div class="w-8 h-8 overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A cinematic portrait of a professional athlete with intense focus, lit by harsh blue and red neon lights in a dark concrete environment. The photography is high-contrast and minimalist, emphasizing clean lines and a premium athletic aesthetic consistent with dark mode UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACUJFCdz7oHP2lu9bxLLNdlOfXoLgBoNdgAOpb6-TRgORrh8OeDHmPcBXde76_3aPskfkE71XBdisRI8PxuuxLItCSprNJI1zsJpoU8Z-DgwWrbNdnny3XIFG4i4BwsiWWKha7s_ozkMvaJIrOdOwtgpDTelsNIsFsaNAOxZxV8Knn-dHQMoYo2Tg3golbyvKOYRKZpp479zxWPpR3H8Pl7xPzJE5Rd0iZMhUj5OAT7s70vo7fv1kVCNWLvgPffHBJJ-aDMN6pl_w0"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-section-gap px-gutter min-h-screen">
+<!-- Hero Header Section -->
+<section class="mb-12">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase mb-2 block">Player Portal</span>
+<h2 class="font-display-xl text-headline-lg uppercase leading-none">Activity Log</h2>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center border border-outline-variant/30 px-4 py-2">
+<span class="material-symbols-outlined text-outline-variant mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-body-md text-on-surface w-48" placeholder="Search orders..." type="text"/>
+</div>
+<button class="border border-on-surface px-6 py-2 font-button-text uppercase hover:bg-on-surface hover:text-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                    Filter
+                </button>
+</div>
+</div>
+</section>
+<!-- Orders Grid Layout (Bento-inspired List) -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Order Card 1: Delivered -->
+<div class="group border border-outline-variant/10 bg-surface-container-low hover:border-primary/50 transition-all duration-300">
+<div class="flex flex-col md:flex-row items-stretch">
+<div class="p-6 flex-1 flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Order Ref.</p>
+<p class="font-headline-md text-on-surface">#VL-892304</p>
+</div>
+<div class="mt-4">
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Date</p>
+<p class="font-body-md text-on-surface">Oct 24, 2024</p>
+</div>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Items</p>
+<div class="flex -space-x-2">
+<div class="w-10 h-10 border border-surface-container-highest overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover" data-alt="Close up of a sleek, high-performance running shoe with electric blue accents against a deep charcoal background. Technical studio lighting emphasizes the fabric textures and aerodynamic silhouette in a cinematic, anime-inspired style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJP2P8nXL2Pcnvjq84L3iXT5Fl3QA3c4i6-o_UeTS9ge7rZT2CkcJq2RkFEQMh2SFL0bNnVICsrKa31KhDqWkD67wrBSMkz2gE1HVf-WsJzsE4Kk1kH5VFPEPyfG53wiQxec-D5IFOZjy_WamzJMspgMNzfn2yxUdu6dJUd02O2Kpi9xR9IVHglZYsAtZ5YCtZsehr13BxAHtU3-Mrf5xC9CP9u8TTA2H6Bqo2dDuH3dOm_WDpOtQJU72FHbXru1kLrqw2lwzcObD9"/>
+</div>
+<div class="w-10 h-10 border border-surface-container-highest overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover" data-alt="Technical athletic compression shirt displayed on a minimalist background. The fabric has a subtle hexagonal pattern glowing with low-key electric blue rim lighting, creating a premium professional sports feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK_MYf32UngzLGtSqw-j8kVFf-QwLbtrxRIVTNlfesRZAGPzD6FX-UVg5wWYSjSdnbeiAMyHQ7imndCt0hX-uc-vzREHECp0v9ctNrEhBbN-zutNWhZ50Qr1vYj6SH_yGeYf-U026Ik1LiygFgo1HyQFhxSJ482pHFQc-gG1YjCKe_5kawUrH1boAjUMZFA5CkOi7O-djDzw6Sgfqw2Q6EgPqIYJajvSUEs4ecXccqVHq0qzlc-zy6x0fpSrlCy_MYyIZhu8BbX6OI"/>
+</div>
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center font-label-caps text-on-surface-variant text-[10px] border border-surface-container-highest">
+                                    +1
+                                </div>
+</div>
+</div>
+<div class="mt-4">
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Total</p>
+<p class="font-headline-md text-primary">$348.00</p>
+</div>
+</div>
+<div class="flex flex-col justify-between items-end">
+<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 font-label-caps uppercase text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                            Delivered
+                        </span>
+<button class="font-button-text text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 uppercase tracking-widest mt-4">
+                            View Details
+                            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Card 2: Shipped -->
+<div class="group border border-outline-variant/10 bg-surface-container-low hover:border-primary/50 transition-all duration-300">
+<div class="flex flex-col md:flex-row items-stretch">
+<div class="p-6 flex-1 flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Order Ref.</p>
+<p class="font-headline-md text-on-surface">#VL-892115</p>
+</div>
+<div class="mt-4">
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Date</p>
+<p class="font-body-md text-on-surface">Oct 21, 2024</p>
+</div>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Items</p>
+<div class="flex -space-x-2">
+<div class="w-10 h-10 border border-surface-container-highest overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover" data-alt="Modern high-performance sports watch with a glowing digital interface. The product is shot with sharp shadows and cold blue lighting, reflecting a technical-cinematic aesthetic and precision engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6V1lqYOgEzEKtQoo9trYDWSS6gh20-0Wo542KxmCGF8krUrM11agRVRJ-5fDWmyJFqGZNZ5iJorFw-tChUIXqZUeVNsCONzyhKr4CqufTUSwzAVmYte4d66vICaIVBHWW9PaSFujHf6dUqdOxKgClvHGPpqKucqevDNWf_oxqUkeGbcwm5SpvPS8n3wP-WoRIRsuHkytD5T4027TZ1u6y3gn-xZVcxOcIwt251VhWRFAHHHUxuNWGCMBF1H_h9BAr1XZMsb42F3YU"/>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Total</p>
+<p class="font-headline-md text-primary">$189.50</p>
+</div>
+</div>
+<div class="flex flex-col justify-between items-end">
+<span class="px-3 py-1 bg-secondary-container/30 text-secondary border border-secondary/20 font-label-caps uppercase text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                            Shipped
+                        </span>
+<button class="font-button-text text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 uppercase tracking-widest mt-4">
+                            View Details
+                            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Card 3: Processing -->
+<div class="group border border-outline-variant/10 bg-surface-container-low hover:border-primary/50 transition-all duration-300">
+<div class="flex flex-col md:flex-row items-stretch">
+<div class="p-6 flex-1 flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Order Ref.</p>
+<p class="font-headline-md text-on-surface">#VL-892002</p>
+</div>
+<div class="mt-4">
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Date</p>
+<p class="font-body-md text-on-surface">Oct 19, 2024</p>
+</div>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Items</p>
+<div class="flex -space-x-2">
+<div class="w-10 h-10 border border-surface-container-highest overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover" data-alt="A pair of premium athletic socks with neon crimson compression zones. Shot on a minimalist black surface with sharp technical lighting, highlighting the high-performance weave and vibrant anime-inspired color accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbrQ-0GdXrwqEFL1rtDy7oA1LgIVYCphlPc38PJU2I4TIzx_y0IzSMAKkd6b80mA25Akkyv5jX443sx01h0kzWpiHhE7KpgbVh_KzSng_bQWo1asfIdwT496TJ3lI2IrSApio3cq71RO9CY99WYB5CJVju-TLdbwVC04La0cmWJkGCVnMh9bc6lr5a7TS9wVabSUeWzhfGY2MbXhib3fv9WdK-DdNlYOOmsSC2iOdbjFJd1AkcPzCcrN3Em8lHekbn8jhHeReYgLSZ"/>
+</div>
+<div class="w-10 h-10 border border-surface-container-highest overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover" data-alt="Stylized fashion shot of performance leggings with reflective geometric patterns. The aesthetic is dark and cinematic with high-contrast electric blue highlights that emphasize the technical motion-ready construction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn3cGxCUKZLhsEqQwnFzfnEFET3BVQaV1Nupu8yPKInM0ZwWid3gVPxosfO84gKqMEp9aoKk9WALan0WlPFFVEX2hlvZmyAMYj9sMgdtXWB1blwcPtK6d_qT-GiCl-QdNrf8RF1d-U5ANI9oqkNALDDRbHTuMAXzo75YjdhAroFJ6KatvlIU_p_AdUnsn2BA5MnuW2DXLyL4A1uhXvpe3SsaWFThXtqjSTQmb_aD_32Axy44SYGfYtspIFFk35jdgCKu6ZT6Ivqi4v"/>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<p class="font-label-caps text-[10px] text-outline-variant uppercase mb-1">Total</p>
+<p class="font-headline-md text-primary">$124.00</p>
+</div>
+</div>
+<div class="flex flex-col justify-between items-end">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 font-label-caps uppercase text-[10px] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+                            Processing
+                        </span>
+<button class="font-button-text text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2 uppercase tracking-widest mt-4">
+                            View Details
+                            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent my-12"></div>
+<div class="flex justify-center">
+<button class="font-button-text uppercase tracking-widest border border-outline-variant/30 px-12 py-4 hover:border-primary hover:text-primary transition-all active:scale-95">
+                Load More History
+            </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="ml-64 w-[calc(100%-16rem)] py-16 px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-display-xl text-headline-md text-primary uppercase tracking-tighter">ZENITH ARCADE</span>
+<p class="max-w-xs font-body-md text-on-surface-variant text-sm leading-relaxed">
+                The global standard in high-performance equipment and technical apparel for the elite athlete.
+            </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-on-surface uppercase tracking-widest">Navigation</span>
+<div class="flex flex-col gap-2 font-body-md text-on-surface-variant text-sm">
+<a class="hover:text-primary transition-colors" href="#">Shop All</a>
+<a class="hover:text-primary transition-colors" href="#">Latest Drops</a>
+<a class="hover:text-primary transition-colors" href="#">Equipment</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-on-surface uppercase tracking-widest">Company</span>
+<div class="flex flex-col gap-2 font-body-md text-on-surface-variant text-sm">
+<a class="hover:text-primary transition-colors" href="#">Our Story</a>
+<a class="hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-on-surface uppercase tracking-widest">Support</span>
+<div class="flex flex-col gap-2 font-body-md text-on-surface-variant text-sm">
+<a class="hover:text-primary transition-colors" href="#">Shipping</a>
+<a class="hover:text-primary transition-colors" href="#">Returns</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-on-surface-variant text-[12px] opacity-60 uppercase tracking-widest">© 2024 ZENITH ARCADE. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8 font-body-md text-[12px] text-on-surface-variant uppercase tracking-widest">
+<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-on-surface transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

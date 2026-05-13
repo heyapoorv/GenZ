@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wishlist | ZENITH ARCADE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Geist:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#313030",
+                        "on-primary-fixed-variant": "#0039b3",
+                        "outline": "#8d90a2",
+                        "inverse-surface": "#e1e1ef",
+                        "primary-container": "#0055ff",
+                        "primary": "#b6c4ff",
+                        "on-background": "#e1e1ef",
+                        "surface-dim": "#11131c",
+                        "surface-container-lowest": "#0c0e17",
+                        "surface-container-highest": "#32343f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#bab8b7",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#2e303a",
+                        "surface-container-low": "#191b25",
+                        "outline-variant": "#434656",
+                        "on-surface": "#e1e1ef",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "inverse-primary": "#004dea",
+                        "surface-tint": "#b6c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "tertiary": "#c6c6c7",
+                        "on-primary": "#002780",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#474646",
+                        "background": "#11131c",
+                        "tertiary-container": "#666868",
+                        "surface-container-high": "#282933",
+                        "on-primary-container": "#e3e6ff",
+                        "on-tertiary-container": "#e7e7e7",
+                        "secondary": "#c8c6c5",
+                        "surface-bright": "#373943",
+                        "on-tertiary": "#2f3131",
+                        "on-primary-fixed": "#001551",
+                        "surface-container": "#1d1f29",
+                        "on-surface-variant": "#c3c5d9",
+                        "surface-variant": "#32343f",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "secondary-container": "#4a4949",
+                        "surface": "#11131c",
+                        "secondary-fixed": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Geist"],
+                        "headline-lg-mobile": ["Anton"],
+                        "display-xl": ["Anton"],
+                        "button-text": ["Geist"],
+                        "headline-md": ["Anton"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                        "display-xl": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "button-text": ["14px", {"lineHeight": "100%", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "120%", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-gradient-technical {
+            background: linear-gradient(135deg, rgba(182, 196, 255, 0.05) 0%, rgba(17, 19, 28, 0) 100%);
+        }
+        .primary-button-hover:hover {
+            background-color: #004dea;
+        }
+        .ghost-border {
+            border: 1px solid rgba(225, 225, 239, 0.1);
+        }
+        .ghost-border:hover {
+            border-color: #b6c4ff;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 flex flex-col bg-surface-dim border-r border-outline-variant/10 z-50">
+<div class="p-gutter pb-8">
+<h1 class="font-display-xl text-headline-md tracking-tighter text-primary">ZENITH ARCADE</h1>
+<p class="font-body-md text-on-surface-variant text-[10px] uppercase tracking-[0.2em] mt-1">Digital Performance Hub</p>
+</div>
+<nav class="flex-grow flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-md text-body-md">Order History</span>
+</a>
+<!-- Active State: Wishlist -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold bg-primary-container/10 border-r-2 border-primary transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-body-md text-body-md">Saved Items</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-body-md text-body-md">Account</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span class="font-body-md text-body-md">Preferences</span>
+</a>
+</nav>
+<div class="p-gutter mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-button-text text-button-text py-4 uppercase tracking-widest primary-button-hover transition-all">
+                Shop The Collection
+            </button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 z-40 flex justify-between items-center px-margin-desktop h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Catalog</a>
+<span class="text-outline-variant text-xs">/</span>
+<span class="font-label-caps text-label-caps text-primary">Saved</span>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-low border border-outline-variant/20 text-[10px] tracking-widest font-label-caps pl-10 pr-4 py-2 w-72 focus:ring-1 focus:ring-primary focus:border-primary" placeholder="SEARCH GLOBAL CATALOG" type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-caps text-[10px]">03</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/40 ring-4 ring-primary/5 cursor-pointer">
+<img alt="User avatar" data-alt="A close-up professional portrait of a stylish person with a modern aesthetic, set against a dark architectural background. The lighting is dramatic and cinematic, emphasizing sharp features and a high-performance lifestyle look. The color palette is muted with deep blacks and cool tones to match the Velocity brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-aX2HYwjsswFzYiPlANT3M3anUVRmw9lodWdjm4ZS90BIu6XDYAn8xNjo6L_6b6HrlhgrMI8JzvnjVJct_LUuAHXq12D4vKnf5ZwdNsgesRyQpWVhIUL-xC0_-yiQlKu0S2wH6HMIM4oOQ1bqpaybds1ZfYBbZiNhq8WHEdIP8LwCo9JwQFRB2jaFoPUIPZI0xMOY0LhsigpG1usXRKHV0evCvvN8doxWgvaABeTzBttUw7NwUF7MVnzb5hlSTPbgDX9b1R-6Pyd0"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<!-- Wishlist Header Section -->
+<section class="px-margin-desktop py-12 flex flex-col gap-4">
+<div class="flex items-end justify-between border-b border-outline-variant/10 pb-8">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]">User Profile / Saved Momentum</span>
+<h2 class="font-headline-lg text-headline-lg uppercase mt-2">Saved Items</h2>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
+                    5 Units Archived
+                </div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="px-margin-desktop pb-section-gap">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Featured Wishlist Item (Spans 6 columns) -->
+<div class="col-span-12 lg:col-span-6 flex flex-col group transition-transform duration-300 hover:scale-[1.01]">
+<div class="relative aspect-[16/9] overflow-hidden bg-surface-container-low border border-outline-variant/10">
+<img alt="Apex Performance Shell" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-tech, sleek performance jacket displayed in a cinematic, dark studio environment with blue neon highlights. The material has a technical sheen, suggesting advanced weatherproofing and athletic capability. The lighting is sharp, creating deep shadows and bright highlights that emphasize the garment's aerodynamic silhouette and premium construction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEhpbW6FA8n_hdbjRFI3tVhPyU6IY3hvjoz0pYnW-zoKGJU2kG_-Ny8uY2_MzleRG_EjPavR2igyvyeWvDrK1aBGs5ht55_E_7Zv9JAtoUFsirI4QdUHM0Cifu18z6hhBpz3LIMYwgc16xKh3ihzJB1IVKeTFbJYBU4NPTi1DZhN6dPtwO85D16ee1R8q7EWW6PVzrf8_wPKyv7rdtvRTkZyQPt4FVmujhy1DfMpi6W1eNXMNU-EtZyLp4mm_syvFeD2AU22hsTFX4"/>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface/80 backdrop-blur-md flex items-center justify-center hover:bg-error transition-colors text-on-surface group-hover:bg-error/90">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<div class="absolute bottom-0 left-0 w-full p-gutter bg-gradient-to-t from-surface-dim to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-full bg-primary text-on-primary font-button-text text-button-text py-4 uppercase primary-button-hover tracking-widest">Move to Cart</button>
+</div>
+</div>
+<div class="mt-4 flex justify-between items-start">
+<div>
+<p class="font-label-caps text-label-caps text-primary uppercase">Limited Release</p>
+<h3 class="font-headline-md text-headline-md mt-1">APEX PERFORMANCE SHELL - 01</h3>
+</div>
+<div class="font-headline-md text-headline-md text-primary">$450.00</div>
+</div>
+</div>
+<!-- Standard Product Cards -->
+<!-- Item 2 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 flex flex-col group">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low ghost-border transition-all duration-300 hover:scale-[1.02]">
+<img alt="Velocity Kinetic 1.0" class="w-full h-full object-cover" data-alt="A side view of a vibrant crimson performance running shoe, floating against a deep charcoal background. The lighting is high-contrast, highlighting the complex textures of the technical mesh and the carbon-fiber-reinforced sole. This image captures the essence of speed and precision engineering in a futuristic, cinematic anime-inspired style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsIZcEGVokX8c6UrJYwUw3zpZwewnUzNhqp5r_fLTJ4EYPSRYG4rPT2nuMFAtiJdfO688jS44M0vObu7NfmtJ7upsv-u3DAAtuLQH0arXw4LuPgWhaAkfQxAS4MLCnC2jhAyr9nfo3wQowcrlDT9hXiQH9KM0knlFV9td8CqtB9GgB_NvhZaAszm5bFLWKX_dZE-A9HRFUxt9JL9HB3noPgWzZa-CxWEfd8baYwWia5Fn3ugCEXmhcilb08gFuuuskQU6kVZCO0oMQ"/>
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+<div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<button class="w-full bg-primary text-on-primary font-button-text text-button-text py-3 uppercase primary-button-hover">Add to Cart</button>
+</div>
+</div>
+<div class="mt-4">
+<h4 class="font-body-lg text-body-lg font-bold">VELOCITY KINETIC 1.0</h4>
+<div class="flex justify-between items-center mt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Footwear</span>
+<span class="font-body-md text-body-md text-primary">$180.00</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 flex flex-col group">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low ghost-border transition-all duration-300 hover:scale-[1.02]">
+<img alt="Tech Cargo Trousers" class="w-full h-full object-cover" data-alt="Minimalist technical cargo pants with multiple geometric pockets, displayed on a cool grey background. The fabric has a matte black finish with subtle electric blue stitching details. The overall look is utilitarian yet high-fashion, blending tactical gear aesthetics with urban performance style in a dark, clean composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK4AHytZpkKNYKcY4942eeHkyQSWbiaBq68ZWZdNQL4zNvSQrmGZXkYnCH3s7N_xf4giOi8cL9CyY6s8OnKIqUGrhOh7VmbL4Yr7uknWtMZkVHnSiiPAlv4tVplLW_SOsRLQEPmvVl7NQBgz2-AWobETD5RyTVtn31Eub8CQ4ArBuSNfZw0P75hX_eU8DB-qwoeoPtP8MTc-9n8FrgYlWy2DqYBo-8YT3ouvDWtIcuUr3kYrM4nHCOSdskxismunh54FpLw3WxIxtu"/>
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+<div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<button class="w-full bg-primary text-on-primary font-button-text text-button-text py-3 uppercase primary-button-hover">Add to Cart</button>
+</div>
+</div>
+<div class="mt-4">
+<h4 class="font-body-lg text-body-lg font-bold">TECH CARGO V2</h4>
+<div class="flex justify-between items-center mt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Bottoms</span>
+<span class="font-body-md text-body-md text-primary">$210.00</span>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 flex flex-col group">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low ghost-border transition-all duration-300 hover:scale-[1.02]">
+<img alt="Compression Base Layer" class="w-full h-full object-cover" data-alt="A sleek black compression shirt with white geometric patterns that mimic muscular structure. The shot is tightly cropped to show the high-performance fabric texture and the contrast between the deep black base and vibrant white accents. The lighting is cinematic, reflecting off the technical fibers in a dark, high-contrast studio space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkGmWogLU_An2kRzJURyMsSaAmGAMURkQ3_ZAUcdE-Y5A_sm9HJ8QS8S8FrBDg29UmMvBERk2FZxwAeLQqmP-DRrMY9gpcF6M6boXp-FffH2yR2W9ODMTKZN4mEaLR485NBqEJvN_zPZED4k7ryKg4h8pAokYyrqnqSHzHDJM3clUgKJYOpL6gN8_WsFXnVgNQ3zkU-diu4jY-bOyUAjsGn-a3uwkBHP8gvs2LBvZ5I4UQ3Ra1yRIFSYqU1IoRAqYO8KP37wCe0bD"/>
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+<div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<button class="w-full bg-primary text-on-primary font-button-text text-button-text py-3 uppercase primary-button-hover">Add to Cart</button>
+</div>
+</div>
+<div class="mt-4">
+<h4 class="font-body-lg text-body-lg font-bold">CORE COMPRESSION LS</h4>
+<div class="flex justify-between items-center mt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Base Layer</span>
+<span class="font-body-md text-body-md text-primary">$85.00</span>
+</div>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="col-span-12 md:col-span-6 lg:col-span-3 flex flex-col group">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low ghost-border transition-all duration-300 hover:scale-[1.02]">
+<img alt="Technical Running Cap" class="w-full h-full object-cover" data-alt="A lightweight technical running cap in deep charcoal with a reflective logo on the front. The product is suspended in a minimalist, foggy dark environment that highlights its water-resistant surface and aerodynamic shape. The mood is mysterious and high-performance, with sharp cool-toned lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRjO-5FoZHRpkV5nK_ZGQiRFzIWdrEewtYUn0SoYUG7y0jXSyVEa_bm8-CZgOcRnaxrsemNkas82KKKjlECnh64phfR6O9vrSDQOhhpeohKksJT5NtpT5IEhIi4HC1qn3rHF2ia3Hc1AYRIonLxJ9EXoZz1ZmXEZfn3bCZkp-jVxxP8ChhNbhBHuE54yGLDYg8gdJucavOb48hQdl6B3oL_IJb_r0mbgQbVduoKx2Kc7KaTfl9cO-An9EgAT2RtS1evUYrZ2oV9i76"/>
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+<div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<button class="w-full bg-primary text-on-primary font-button-text text-button-text py-3 uppercase primary-button-hover">Add to Cart</button>
+</div>
+</div>
+<div class="mt-4">
+<h4 class="font-body-lg text-body-lg font-bold">AERO-LIGHT CAP</h4>
+<div class="flex justify-between items-center mt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Accessories</span>
+<span class="font-body-md text-body-md text-primary">$45.00</span>
+</div>
+</div>
+</div>
+<!-- Empty State Suggestion (Asymmetric Filler) -->
+<div class="col-span-12 lg:col-span-6 bg-surface-container-lowest flex items-center justify-center border border-dashed border-outline-variant/30 p-section-gap">
+<div class="text-center">
+<span class="material-symbols-outlined text-outline-variant text-4xl mb-4" data-icon="add_circle">add_circle</span>
+<p class="font-headline-md text-headline-md uppercase opacity-30">Add more performance</p>
+<button class="mt-6 font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-on-surface hover:border-on-surface transition-all">Explore Global Catalog</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-desktop bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="flex flex-col lg:flex-row justify-between gap-12 lg:gap-gutter">
+<div class="flex flex-col gap-6 max-w-sm">
+<h3 class="font-display-xl text-headline-md text-primary">ZENITH ARCADE</h3>
+<p class="font-body-md text-on-surface-variant">The future of athletic performance and technical apparel. Engineered for those who demand more from their gear.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-24">
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">Support</h4>
+<nav class="flex flex-col gap-2">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Returns</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">Company</h4>
+<nav class="flex flex-col gap-2">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Our Ethos</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">Social</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="language">language</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-label-caps text-[10px] text-on-surface-variant tracking-[0.2em]">© 2024 ZENITH ARCADE. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-8">
+<a class="font-label-caps text-[10px] text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-[10px] text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

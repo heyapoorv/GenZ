@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Geist:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #11131c;
+            color: #e1e1ef;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(17, 19, 28, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#313030",
+                        "on-primary-fixed-variant": "#0039b3",
+                        "outline": "#8d90a2",
+                        "inverse-surface": "#e1e1ef",
+                        "primary-container": "#0055ff",
+                        "primary": "#b6c4ff",
+                        "on-background": "#e1e1ef",
+                        "surface-dim": "#11131c",
+                        "surface-container-lowest": "#0c0e17",
+                        "surface-container-highest": "#32343f",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#bab8b7",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#2e303a",
+                        "surface-container-low": "#191b25",
+                        "outline-variant": "#434656",
+                        "on-surface": "#e1e1ef",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "inverse-primary": "#004dea",
+                        "surface-tint": "#b6c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "tertiary": "#c6c6c7",
+                        "on-primary": "#002780",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#474646",
+                        "background": "#11131c",
+                        "tertiary-container": "#666868",
+                        "surface-container-high": "#282933",
+                        "on-primary-container": "#e3e6ff",
+                        "on-tertiary-container": "#e7e7e7",
+                        "secondary": "#c8c6c5",
+                        "surface-bright": "#373943",
+                        "on-tertiary": "#2f3131",
+                        "on-primary-fixed": "#001551",
+                        "surface-container": "#1d1f29",
+                        "on-surface-variant": "#c3c5d9",
+                        "surface-variant": "#32343f",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "secondary-container": "#4a4949",
+                        "surface": "#11131c",
+                        "secondary-fixed": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Geist"],
+                        "headline-lg-mobile": ["Anton"],
+                        "display-xl": ["Anton"],
+                        "button-text": ["Geist"],
+                        "headline-md": ["Anton"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                        "display-xl": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "button-text": ["14px", {"lineHeight": "100%", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "120%", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-outline-variant/10 flex flex-col bg-surface-dim z-50">
+<div class="px-6 py-8">
+<h1 class="font-display-xl text-headline-md tracking-tighter text-primary">ZENITH ARCADE</h1>
+<p class="font-body-md text-label-caps text-on-surface-variant mt-1 opacity-60">Elite Gaming &amp; Gear</p>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-md">Order History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-body-md">Wishlist</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold bg-primary-container/10 border-r-2 border-primary transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-body-md">Member Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md">Account Settings</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full py-4 px-4 bg-primary text-on-primary font-button-text uppercase tracking-widest hover:bg-primary/90 transition-colors duration-300">
+            Shop New Arrivals
+        </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col relative">
+<!-- TopAppBar Shell (Standardized for ZENITH ARCADE) -->
+<header class="fixed top-0 right-0 left-64 z-40 flex justify-between items-center px-gutter h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+<div class="flex items-center gap-4">
+<span class="font-label-caps text-on-surface-variant text-xs opacity-60">HOME / PROFILE</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center bg-surface-container-high px-4 py-1.5 rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-caps text-xs w-64 text-on-surface placeholder:text-on-surface-variant/50" placeholder="SEARCH GEAR &amp; APPAREL" type="text"/>
+</div>
+<div class="flex items-center gap-4 text-on-surface">
+<button class="material-symbols-outlined hover:text-primary transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined hover:text-primary transition-colors" data-icon="shopping_cart">shopping_cart</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/30">
+<img alt="User avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpkAGfDZvYYDzEV1Y1P-PLwHk3tjjbQDdwzfPHgBaeLjNzy6dPHpYjCF7e3YX5eU3DWww4cbxMtGlP5Xz5q6HGWvOZsPOnYYaYAavhA3ahLp-7bDemZ97rNR8tVQUZjnP1FnbT-fMTt70Ln92TvV7fXrA5OpJKEQiRpA3v5SCrmONlqn5fU9XE4oAG1M2LQ1gmbghKnaztzxW2AXlsQcg-YZ2-i2QImmmYOp3G-pRUVmLxeAMar8n-ViQi3hllDYscKUJS5k8IPuZa"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Content -->
+<div class="mt-16 flex-1 px-margin-desktop py-12">
+<!-- Hero Profile Section -->
+<section class="mb-16">
+<div class="relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-dim to-transparent z-10"></div>
+<img alt="Gaming environment background" class="w-full h-64 object-cover opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDedanKv1ChDqqbXYwKKFAQqrBc5W1wK5o_zXnQaxOlJ5-Y8ZKg52uhw24FgWT4WxXiR-b7ALRlfb7I0czQzjWtxf4cR-KXw2N-_tqu2UIgqLks1-W3qn74S8ObkkTCebEkq0WnYRJJW8GdjxEulohjUlDIjZCW5vm1ZxsNub7LD0pkaEqTPcc7oFaANf5S0FStyfvLSI0Cul3xQoCUCgsCsJwr1vc3_vz04nukCAmPXEoa5ipMYvqycYGTgjU35zN7_DHEVcgAHc40"/>
+<div class="absolute inset-0 z-20 flex items-center px-12">
+<div class="flex items-end gap-8">
+<div class="relative">
+<div class="w-32 h-32 border-2 border-primary p-1">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClMhtIMLtSciLPzS_SPdgAv-pURUIxheJ33B-GcOB0TEM9uLQHxq5Rcnzqr46leRF4w8KI6-VzYL1myL6Zn7NpflzFL3iCUeSyW5Or2ll3jzHDG6JBlnCOPvoVos6OsxbLnko6pAihHvyc2aAaN2qeD8g6tqJhE1zxUFmLQoio4nEA21A0_spuEoMjY3een-C41KxYc4MCgPwLcQl-4z3nN9iHitL6DkgdypZvt37RaqZEjjzOPS3_MtMe4b0ZwzFYG9r9KZQZkIwq"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary px-2 py-1 text-[10px] font-label-caps text-on-primary">PRO</div>
+</div>
+<div class="mb-2">
+<h2 class="font-display-xl text-headline-lg tracking-tight leading-none uppercase">KENJI SATO</h2>
+<p class="font-label-caps text-primary mt-2">ELITE MEMBER • ZENITH ARCADE SINCE 2022</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Recent Orders (Spans 8) -->
+<div class="col-span-8 space-y-gutter">
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">RECENT ACTIVITY</h3>
+<a class="font-label-caps text-primary hover:underline" href="#">VIEW ALL ORDERS</a>
+</div>
+<!-- Order Card 1 -->
+<div class="bg-surface-container border border-outline-variant/10 p-6 flex gap-6 group hover:border-primary transition-colors duration-300">
+<div class="w-24 h-32 bg-surface-container-highest overflow-hidden">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6-XBx6UukNgME1WEUibSk9CUOvJ_6EHh0S3xK-QJ5xBqfxDeS_dFnCnnKVj3CKas_Y5YR6UksgFMRs13rY6YZaRNL8mIr4vR_jQjWyYtnuIxLvM2kmIhYzC3BdjpYlhJHMpysteIds9LecUsARm_du5SkgDOejTV0DYFSta7QwLyZAyBUkkQMKnwpTVEOOShkd5ArWvKxNjMd6oytv7N3t-qzQ0tKqPcH_vwDNCByO3oDP57kuW64xxPMaZKaNnbKX40ayE0I0Kf5"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-xs text-on-surface-variant">ORDER #ZA-902441</span>
+<span class="bg-primary-container/20 text-primary text-[10px] px-2 py-1 font-label-caps">IN TRANSIT</span>
+</div>
+<h4 class="font-headline-md text-lg mt-2">APEX-X PERFORMANCE RUNNER</h4>
+<p class="text-on-surface-variant text-sm font-body-md">Size: 10.5 | Color: Crimson Stealth</p>
+</div>
+<div class="flex justify-between items-end">
+<p class="font-display-xl text-headline-md">$180.00</p>
+<button class="border border-on-surface/20 px-6 py-2 text-[10px] font-label-caps hover:bg-on-surface hover:text-background transition-colors">TRACK SHIPMENT</button>
+</div>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="bg-surface-container border border-outline-variant/10 p-6 flex gap-6 group hover:border-primary transition-colors duration-300">
+<div class="w-24 h-32 bg-surface-container-highest overflow-hidden">
+<img alt="Product Image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS2DhU5eMmJRXzsOHWeicLeSxYmCDI2Lt6fXNzX0KlZzbInvfzYKqsltZcMRShpFDv5V28ZkW_w7fPF7DNmmzbQQEMu_J8s_v8JlozZTvXxyosgbyK8eNgSLkqjIftgrEHp-XSj1dvy96y6fPfnHn9pyAxAHH11Li5DAfjLYlWogNbWkD7_YdKGDxUL3hjEhpJzYbB3DeGLruhlqyAVO2ORYCjqjlsH9c165YSYAzsMzZs0_UM1RVXZZ9CzWVWn6Ci5fYxarzhpyBb"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-xs text-on-surface-variant">ORDER #ZA-899210</span>
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] px-2 py-1 font-label-caps">DELIVERED</span>
+</div>
+<h4 class="font-headline-md text-lg mt-2">CORE-TECH COMPRESSION BASE</h4>
+<p class="text-on-surface-variant text-sm font-body-md">Size: Large | Color: Obsidian</p>
+</div>
+<div class="flex justify-between items-end">
+<p class="font-display-xl text-headline-md">$65.00</p>
+<button class="border border-on-surface/20 px-6 py-2 text-[10px] font-label-caps hover:bg-on-surface hover:text-background transition-colors">ORDER DETAILS</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Options Grid (Spans 4) -->
+<div class="col-span-4 grid grid-cols-1 gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">QUICK ACCESS</h3>
+<a class="bg-surface-container-high border border-outline-variant/10 p-5 flex items-center justify-between group hover:bg-primary transition-all duration-300" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-caps text-sm group-hover:text-on-primary">MY ORDERS</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-primary" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="bg-surface-container-high border border-outline-variant/10 p-5 flex items-center justify-between group hover:bg-primary transition-all duration-300" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" data-icon="favorite">favorite</span>
+<span class="font-label-caps text-sm group-hover:text-on-primary">WISHLIST</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-primary" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="bg-surface-container-high border border-outline-variant/10 p-5 flex items-center justify-between group hover:bg-primary transition-all duration-300" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" data-icon="security">security</span>
+<span class="font-label-caps text-sm group-hover:text-on-primary">SECURITY SETTINGS</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-primary" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="bg-surface-container-high border border-outline-variant/10 p-5 flex items-center justify-between group hover:bg-primary transition-all duration-300" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary" data-icon="location_on">location_on</span>
+<span class="font-label-caps text-sm group-hover:text-on-primary">SHIPPING ADDRESSES</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-primary" data-icon="chevron_right">chevron_right</span>
+</a>
+<div class="mt-4 pt-4 border-t border-outline-variant/10">
+<button class="w-full bg-surface-container-lowest border border-error/30 p-5 flex items-center justify-center gap-4 text-error font-label-caps text-sm hover:bg-error hover:text-on-error transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                        LOG OUT
+                    </button>
+</div>
+</div>
+</div>
+<!-- Promotion Banner -->
+<section class="mt-section-gap relative h-48 bg-primary-container overflow-hidden group">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="font-display-xl text-[12vw] opacity-10 leading-none select-none">ULTIMATE</span>
+</div>
+<div class="relative z-10 h-full flex flex-col items-center justify-center text-on-primary-container px-12 text-center">
+<h3 class="font-display-xl text-headline-lg tracking-tight">READY FOR YOUR NEXT LEVEL?</h3>
+<p class="font-body-md text-lg mt-2 mb-6 max-w-xl opacity-80">As an Elite Member, you have exclusive early access to the ZENITH Summer '24 Cinematic Collection.</p>
+<button class="bg-on-primary-container text-primary-container px-10 py-3 font-button-text uppercase tracking-widest hover:scale-105 transition-transform">EXPLORE COLLECTION</button>
+</div>
+</section>
+</div>
+<!-- Footer Shell (Standardized for ZENITH ARCADE) -->
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-unit bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="flex flex-col gap-1">
+<div class="font-label-caps text-label-caps text-primary tracking-widest">ZENITH ARCADE</div>
+<div class="font-body-md text-label-caps text-[10px] opacity-40">DEFINING ELITE PERFORMANCE</div>
+</div>
+<div class="flex gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors text-sm" href="#">Terms of Service</a>
+<a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors text-sm" href="#">Shipping Info</a>
+<a class="font-body-md text-on-surface-variant hover:text-on-surface transition-colors text-sm" href="#">Contact Support</a>
+</div>
+<div class="font-body-md text-label-caps text-[10px] opacity-40 uppercase">© 2024 ZENITH ARCADE. ALL RIGHTS RESERVED.</div>
+</footer>
+</main>
+</body></html>

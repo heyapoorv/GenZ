@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Geist:wght@400;700&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#666868",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline": "#8d90a2",
+                    "on-surface-variant": "#c3c5d9",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-background": "#e1e1ef",
+                    "on-surface": "#e1e1ef",
+                    "on-secondary": "#313030",
+                    "surface-container": "#1d1f29",
+                    "primary-container": "#0055ff",
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0c0e17",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#e3e6ff",
+                    "surface-container-low": "#191b25",
+                    "secondary-container": "#4a4949",
+                    "tertiary-fixed": "#e2e2e2",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "outline-variant": "#434656",
+                    "background": "#11131c",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#001551",
+                    "on-primary": "#002780",
+                    "inverse-on-surface": "#2e303a",
+                    "on-error": "#690005",
+                    "surface-variant": "#32343f",
+                    "surface-bright": "#373943",
+                    "surface": "#11131c",
+                    "secondary": "#c8c6c5",
+                    "primary": "#b6c4ff",
+                    "inverse-primary": "#004dea",
+                    "on-tertiary": "#2f3131",
+                    "surface-container-high": "#282933",
+                    "on-primary-fixed-variant": "#0039b3",
+                    "surface-container-highest": "#32343f",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "inverse-surface": "#e1e1ef",
+                    "surface-tint": "#b6c4ff",
+                    "primary-fixed": "#dce1ff",
+                    "on-tertiary-container": "#e7e7e7",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-dim": "#11131c",
+                    "tertiary": "#c6c6c7",
+                    "on-secondary-container": "#bab8b7",
+                    "on-secondary-fixed": "#1c1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "container-max": "1440px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Anton"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Anton"],
+                    "headline-lg": ["Anton"],
+                    "button-text": ["Geist"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Anton"],
+                    "label-caps": ["Geist"]
+            },
+            "fontSize": {
+                    "display-xl": ["96px", {"lineHeight": "100%", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "150%", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "110%", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "button-text": ["14px", {"lineHeight": "100%", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "120%", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-outline-variant/20">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<a class="font-display-xl text-headline-md text-on-surface tracking-tighter uppercase" href="#">ZENITH ARCADE</a>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-button-text text-button-text uppercase text-on-surface border-b-2 border-primary pb-1 transition-colors duration-300" href="#">SHOP</a>
+<a class="font-button-text text-button-text uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">COLLECTIONS</a>
+<a class="font-button-text text-button-text uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">LIMITED</a>
+<a class="font-button-text text-button-text uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">JOURNAL</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</button>
+<button class="hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<span class="absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[10px] min-w-[16px] h-[16px] flex items-center justify-center font-bold rounded-full">1</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-[80px] min-h-screen">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<div class="flex flex-col md:grid md:grid-cols-12 gap-gutter">
+<!-- Large Image Gallery -->
+<div class="md:col-span-7 space-y-gutter">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up high-fidelity studio shot of a professional tech-wear athletic jersey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsXfjIdGL0pyVHZMsZvyReamjhFRmDeALemGpID8W28NUoa9kO7PAESUuECLbF8ZQk4v7jzD_lmCvfQq7knXviUfq3MY8VyKEe2xPFwz42KbjOaW9klh8FZYp_3S1r6l1l4IFqAVBmtUqDAjQP6W7x1eAnnyHWvSNDVpJ3XZx-TeRlGg2hrKiB6XX0Q3faztWKhoovhn10wSfUFB8VaNmjC9uAKdFZahrB2GJv-kRQSB4xTz4n1SR_4aqzrpwrC9TGN76zJsnUIICo"/>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed macro shot of the Aero-Tech Performance Jersey technical mesh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl89YMVZJHlmNOQ2O2hLgZmWN4cN_D8yNc0baFs6djb9WS2NnXI7KUlV7LDWrbdYyFK9rXtcDh5-9iWK7v0ARx6pG9yo968_k6wrwf1lrSfs63uHyiizbibTEHetobVP5QWqKuKoeybQkzVzlJyoRQXZWYEnbh2vQ1aG26lKM2kn8zKfALjXeX2F49YGB-8FE9xgeH5dNZlm_pgpqAY8cMtg8CDtfq3RJfdLqFzMsfu8Wr20lKTAvmWNDBqwJ7elK_jv9MbfVkF3OE"/>
+</div>
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Lifestyle shot of an athlete in a dynamic sprinting pose" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlYPMx79LJ_Vhq2npHeAWjE9d7BcvF8q-0fgjAXp6vaEAhxTfYYpZunYU8Vt027O1Nac9kSYQSKL1NEiMXOKtwJpFnmv7oQW77OcMQARYwD1FcA4_lynQf5oYuzFPXLCS9c9hMWHGZKHE6Y9m8m0ofcG55MIP75EqXinyCb6G8zRgU9LN0lOMH9wEtFjbBj8KU7h_JrN9UojNJ7jxvDDYXdQe0LbgxTQfg1GlEOpA-rN_6lJ0enXdfkftTaHhKyjK9hoNijRZYt1Xf"/>
+</div>
+</div>
+</div>
+<!-- Sticky Sidebar -->
+<div class="md:col-span-5">
+<div class="sticky top-32 space-y-8">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest block mb-2 uppercase">ASCENSION SERIES // 001</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-4 leading-none">Aero-Tech Performance Jersey</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                            Engineered for maximum velocity. Built with reinforced tectonic seams and ultra-breathable synthetic polymer mesh. The ultimate skin for high-intensity output.
+                        </p>
+</div>
+<div class="flex items-end gap-4">
+<span class="font-headline-md text-headline-md text-on-surface">$85.00</span>
+<span class="font-label-caps text-label-caps text-outline line-through mb-1.5 uppercase">MSRP $110.00</span>
+</div>
+<!-- Size Selector -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface uppercase">SELECT SIZE</span>
+<button class="font-label-caps text-label-caps text-primary underline uppercase">SIZE GUIDE</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-4 border border-outline-variant hover:border-primary transition-all font-button-text text-button-text">S</button>
+<button class="py-4 bg-primary text-on-primary font-button-text text-button-text">M</button>
+<button class="py-4 border border-outline-variant hover:border-primary transition-all font-button-text text-button-text">L</button>
+<button class="py-4 border border-outline-variant hover:border-primary transition-all font-button-text text-button-text">XL</button>
+</div>
+</div>
+<!-- CTA -->
+<div class="space-y-3">
+<button class="w-full py-5 bg-primary text-on-primary font-button-text text-button-text uppercase flex items-center justify-center gap-2 hover:opacity-90 transition-all group">
+                            ADD TO CART
+                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full py-5 border border-on-surface text-on-surface font-button-text text-button-text uppercase hover:bg-on-surface hover:text-background transition-all">
+                            BUY NOW WITH APPLE PAY
+                        </button>
+</div>
+<!-- Expandable Sections -->
+<div class="divide-y divide-outline-variant/20 border-y border-outline-variant/20">
+<details class="group py-6">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-label-caps text-label-caps text-on-surface uppercase">TECHNICAL SPECS</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-6 font-body-md text-body-md text-on-surface-variant space-y-2">
+<p>• 88% Recycled Polyester / 12% Aero-Elastane</p>
+<p>• Laser-cut ventilation in high-heat zones</p>
+<p>• Moisture-wicking "Hydro-Flow" technology</p>
+<p>• Reflective brand marks for low-light visibility</p>
+</div>
+</details>
+<details class="group py-6">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="font-label-caps text-label-caps text-on-surface uppercase">REVIEWS (128)</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-6 space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-8 border-b border-outline-variant/20">
+<div class="flex items-center gap-4">
+<div class="text-[48px] font-headline-lg leading-none">4.8</div>
+<div>
+<div class="flex items-center gap-0.5 text-primary mb-1">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0.8;">star_half</span>
+</div>
+<div class="font-label-caps text-[10px] text-on-surface-variant uppercase">BASED ON 128 REVIEWS</div>
+</div>
+</div>
+<button class="px-8 py-3 border border-primary text-primary font-button-text text-button-text uppercase hover:bg-primary hover:text-on-primary transition-all">
+                                        WRITE A REVIEW
+                                    </button>
+</div>
+<div class="space-y-10">
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-on-surface">TAKUMI F.</span>
+<span class="flex items-center gap-1 text-[10px] text-primary font-bold">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+                                                        VERIFIED
+                                                    </span>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<span class="font-body-md text-[12px] text-on-surface-variant uppercase">OCT 12, 2024</span>
+</div>
+<div>
+<h4 class="font-button-text text-on-surface mb-2 uppercase">PERFECT FOR HIGH-SPEED RUNS</h4>
+<p class="font-body-md text-on-surface-variant">Feels like a second skin. The compression is perfect and the moisture-wicking technology actually works during intense intervals.</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 border-t border-outline-variant/20 text-center font-button-text text-button-text text-primary uppercase hover:text-on-surface transition-all">
+                                    VIEW ALL 128 REVIEWS
+                                </button>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: You May Also Like -->
+<section class="mt-section-gap py-section-gap bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">COMPLETE THE KIT</h2>
+<a class="font-button-text text-button-text text-primary flex items-center gap-2 group uppercase" href="#">
+                    SHOP ALL <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Product Card -->
+<div class="space-y-4 group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-all duration-500" data-alt="Professional athletic footwear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6gxwH1xnLehV9HFN1hnOg3u6QeSfqIDKHZBjuLVzAgGkEpKLfL6EKVKdgZMmE-36AHsuza8KGLL1qs9ymAIKvP8jCM13df61l7bZ-8SDXF4gok7kFVoW-gybJ3lOPIKwF8I19DqeLNzt8XX0kcSD3rp6RGjn9B-RMpu0KGU3gv9RcHfxlXcr8jDSdfXpxJac85X5IU5nX-Dubx0r10Zkps39ide4PctU6xCZXMH9wuB9hjNJ6DJ9N-tnXbZOogVG3OHbRYfawgVOA"/>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase">Apex-Stride Runner</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$160.00</p>
+</div>
+</div>
+<!-- Product Card -->
+<div class="space-y-4 group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-all duration-500" data-alt="Minimalist black compression shorts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRhjbIgtwBmdeatBFpm5hMI9lGG5TUeHBF8-LjKBjagkzAlSPROWUU1bpNKvXGm_Z7fJ6HZ3QR0dbWwP1Fj8HTKcIplaEsJ9aYWBBII6qJTNCa2giHGZrCDL9qefV57o7CzredFM1eIUiGwfW4c5sbU47DwHtorV41uuPRU4lpGYR1pJntFVDJUQYV_ZS8FJVOJ30qVWZdDXSp6LFkmoIKFTIk5uYmNCgABBAKolQ8q8CVUun60b3wf_ysX7eF_1b42QhDRTZvHyhy"/>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase">Vortex Compression Shorts</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$65.00</p>
+</div>
+</div>
+<!-- Product Card -->
+<div class="space-y-4 group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-all duration-500" data-alt="High-tech minimalist watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAukyZ-zRwJgnS4zo0XWWObC7YkfZekL6uIPSsPaOU5gCFOAcZX0NhubYhDovVFzRRFhfWBnhbacAH1ORFi0iWgOcOdWQOpR--xEimFKs8gv_9wUYPz3XYWxuIldLCzay4FNr0QZLgc4LJUMleIahwp2aoK3AFSC_7P0I-IFTtVxavBTbjs8XRPqXESkhuCuE3qelzRWImiW5YAcFx38mBkt1cyYGmvx5eGjW25tekGr5RZsHwdCNKvcHUnLYN6eWwPMpqiqJf4J8Uu"/>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase">Chronos Bio-Tracker</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$220.00</p>
+</div>
+</div>
+<!-- Product Card -->
+<div class="space-y-4 group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-all duration-500" data-alt="Ergonomic hydration vessel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ-0P9FrBp29LIhKJts4MRIOLZLIeBkLPkUqz3GTDKNWNy8YudP5DkUvwb2Y77XIBA6dUzV_7cMI-znFDLooUpUbnSfGufN5rTqtt1XcQSa_JAxkakLDa6HTfb_w9GMsjcokEuvmLCYFSqBfKXDEeznjk3ZVYdeaTPfjzQD-yhOS7w6xHU527xp6b1FzCbwDbYFOMpPvMukq-VjKHk2pbP-nUmh3Sfq0_BbfnGJ0FZFoYUXAQM-8uIjhUupFVhPEjxLZ-R8qc79f88"/>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface uppercase">Hydro-Core Vessel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$45.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-section-gap border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto gap-16">
+<div class="space-y-8">
+<div class="font-display-xl text-headline-lg text-primary uppercase">ZENITH ARCADE</div>
+<p class="max-w-xs font-body-md text-body-md text-on-surface-variant uppercase tracking-wide">
+                FORGING THE FUTURE OF HUMAN PERFORMANCE THROUGH TECHNICAL EXCELLENCE AND CINEMATIC VISION.
+            </p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-[24px]">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-[24px]">hub</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors text-[24px]">interests</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-24 gap-y-10">
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">RESOURCES</h4>
+<nav class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors uppercase" href="#">PRIVACY POLICY</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors uppercase" href="#">TERMS OF SERVICE</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors uppercase" href="#">SHIPPING &amp; RETURNS</a>
+</nav>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">SUPPORT</h4>
+<nav class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors uppercase" href="#">CONTACT</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors uppercase" href="#">FAQ</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-24">
+<div class="pt-8 border-t border-outline-variant/10 text-center md:text-left font-label-caps text-[12px] text-on-surface-variant uppercase tracking-widest">
+            © 2024 ZENITH ARCADE. ENGINEERED FOR ASCENSION.
+        </div>
+</div>
+</footer>
+</body></html>
