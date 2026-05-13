@@ -30,6 +30,9 @@ backend/logs/
 # Sensitive Backend Data
 backend/cookies.txt
 
+# Legacy / Design Assets
+stitch_scalable_clothing_e_commerce_backend/
+
 # Temp & Cache
 .npm
 .eslintcache
