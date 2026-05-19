@@ -39,3 +39,5 @@ stitch_scalable_clothing_e_commerce_backend/
 .parcel-cache
 .turbo
 .next
+*.glb
+*.gltf

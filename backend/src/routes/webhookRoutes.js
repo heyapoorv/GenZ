@@ -68,9 +68,13 @@ router.post('/stripe', express.raw({ type: 'application/json' }), async (req, re
       for (const item of products) {
         const product = await Product.findById(item.product).session(session);
         if (product) {
-          product.stock -= item.quantity;
-          if (product.stock < 0) throw new Error(`Product ${product.name} out of stock`);
-          await product.save({ session });
+          const sizeIndex = product.sizeStock.findIndex(s => s.size === item.size);
+          if (sizeIndex !== -1) {
+            product.sizeStock[sizeIndex].stock -= item.quantity;
+            if (product.sizeStock[sizeIndex].stock < 0) throw new Error(`Product ${product.name} out of stock for size ${item.size}`);
+            product.totalStock -= item.quantity;
+            await product.save({ session });
+          }
         }
       }
 
@@ -166,7 +170,10 @@ router.post('/razorpay', express.json(), async (req, res) => {
           // Stock management
           const Product = require('../models/Product');
           for (const item of order.products) {
-            await Product.findByIdAndUpdate(item.product, { $inc: { stock: -item.quantity } });
+            await Product.findOneAndUpdate(
+              { _id: item.product, 'sizeStock.size': item.size },
+              { $inc: { 'sizeStock.$.stock': -item.quantity, 'totalStock': -item.quantity } }
+            );
           }
         }
       }

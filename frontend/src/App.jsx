@@ -18,6 +18,34 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { useAuthStore } from './store/authStore';
 import { useCartStore } from './store/cartStore';
 import { useWishlistStore } from './store/wishlistStore';
+import Background3D from './components/layout/Background3D';
+import Lenis from 'lenis';
+import UnseenCursor from './components/effects/UnseenCursor';
+import NoiseOverlay from './components/effects/NoiseOverlay';
+import TechnicalGridFrame from './components/effects/TechnicalGridFrame';
+import AmbientSoundscape from './components/effects/AmbientSoundscape';
+
+const SmoothScroller = ({ children }) => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.05,
+      smoothWheel: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  return <>{children}</>;
+};
 
 // Create a component to handle global auth events that needs access to hooks
 const AuthEventHandler = () => {
@@ -54,28 +82,37 @@ function App() {
 
   return (
     <HelmetProvider>
-      <Router>
-        <Toaster position="bottom-right" toastOptions={{ duration: 3000, style: { background: '#1e1e1e', color: '#fff', border: '1px solid #333' } }} />
-        <AuthEventHandler />
-        <div className="min-h-screen flex flex-col">
-        <Header />
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
-            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-            <Route path="/order-success" element={<ProtectedRoute><OrderSuccess /></ProtectedRoute>} />
-            <Route path="/admin" element={<ProtectedRoute requireAdmin={true}><AdminPanel /></ProtectedRoute>} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-        </div>
-          <Footer />
-        </div>
-      </Router>
+      <SmoothScroller>
+        <Router>
+          <Toaster position="bottom-right" toastOptions={{ duration: 3000, style: { background: '#1e1e1e', color: '#fff', border: '1px solid #333' } }} />
+          <AuthEventHandler />
+          
+          {/* Creative agency UX elements */}
+          <UnseenCursor />
+          <NoiseOverlay />
+          <TechnicalGridFrame />
+          <AmbientSoundscape />
+
+          <div className="min-h-screen flex flex-col relative z-0">
+          <Header />
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
+              <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+              <Route path="/order-success" element={<ProtectedRoute><OrderSuccess /></ProtectedRoute>} />
+              <Route path="/admin" element={<ProtectedRoute requireAdmin={true}><AdminPanel /></ProtectedRoute>} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Routes>
+          </div>
+            <Footer />
+          </div>
+        </Router>
+      </SmoothScroller>
     </HelmetProvider>
   );
 }

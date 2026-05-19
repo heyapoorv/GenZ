@@ -1,0 +1,8 @@
+footer hyperlinks
+docker 
+Deployment
+a little bit of RAZORPAY
+real time proper data
+animations imprvements in ui 
+testing properly 
+ 
